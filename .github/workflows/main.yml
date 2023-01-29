@@ -1,0 +1,31 @@
+name: my-first-workflow
+
+on:
+  push:
+    branches:
+      - main
+  
+  issues:
+    types: [openend, reopenend]
+  
+  schedule:
+    - cron: '11 11 * * 5'
+  
+  workflow_dispatch:
+  
+  repository_dispatch:
+    types: 
+      - myCustomEvent
+  
+jobs:
+  my-first-job:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - run: echo "the job was triggered by a ${{ github['event_name'] }}" event."
+      - uses: actions/checkout@v3
+      - name: display repo
+        run: tree
+        working-directory: .
+    
+    
