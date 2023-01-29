@@ -27,5 +27,9 @@ jobs:
       - name: display repo
         run: tree
         working-directory: .
-    
+      - run: echo "only run if triggered by main branch.."
+        if: contains(github.ref, 'main')
+
+
+
     
