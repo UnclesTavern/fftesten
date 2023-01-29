@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
   
     steps:
-      - run: echo "the job was triggered by a ${{ github['event_name'] }}" event."
+      - run: "🎉 The job was triggered by a ${{ github['event_name'] }} event."
       - uses: actions/checkout@v3
       - name: display repo
         run: tree
