@@ -1,5 +1,5 @@
 name: approval workflows
-on: 
+on:
   workflow_dispatch:
     inputs:
       environment:
